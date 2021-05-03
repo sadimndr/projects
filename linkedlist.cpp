@@ -11,11 +11,11 @@ struct Node {
   struct Node* next;
 };
 
-void insertAtBeginning(struct Node**loc, int data) {
+void insertAtBeginning(struct Node**loc, int val) {
 
  
   struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));
-  new_node->item = data;
+  new_node->item = val;
   new_node->next = (*loc);
   (*loc) = new_node;
 }

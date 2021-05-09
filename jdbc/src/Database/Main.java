@@ -28,7 +28,7 @@ public class Main
               
 	            while (rs.next()) {
 	            	
-	       	      tag+=h.open("td")+rs.getInt("idemployee") +h.close("td")+h.open("td")+rs.getString("First Name") +h.close("td")+h.open("td")+ rs.getString("Middle Name")+h.close("td")+h.open("td")+ rs.getString("Last Name") +h.close("td")+h.open("td")+ rs.getString("Phone no") +h.close("td")+h.close("tr");
+	       	      tag+=h.open("tr")+h.open("td")+rs.getInt("idemployee") +h.close("td")+h.open("td")+rs.getString("First Name") +h.close("td")+h.open("td")+ rs.getString("Middle Name")+h.close("td")+h.open("td")+ rs.getString("Last Name") +h.close("td")+h.open("td")+ rs.getString("Phone no") +h.close("td")+h.close("tr");
 	         	  	 System.out.println( rs.getInt("idemployee") + "\t" + rs.getString("First Name") + "\t " + rs.getString("Middle Name") + "\t " + rs.getString("Last Name") + "   \t" + rs.getString("Phone no"));
 	            }tag+=h.close("table");
 	            con.close();

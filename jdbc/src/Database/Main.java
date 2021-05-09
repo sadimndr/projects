@@ -24,13 +24,13 @@ public class Main
 	            ResultSet rs = stmt.executeQuery("select * from employee");
 	            System.out.println("idemployee  firstname   middlename   lastname   phone");
 	            html h = new html();
-	            tag=h.open("table")+h.open("tr") + h.open("th") + "id" + h.close("th")+h.open("th") + "First Name" + h.close("th")+h.open("th") + "Middle Name" + h.close("th")+h.open("th") + "Last Name" + h.close("th")+h.open("th") + "Phone no" + h.close("th")+h.close("tr")+h.close("table");
+	            tag=h.open("table")+h.open("tr") + h.open("th") + "id" + h.close("th")+h.open("th") + "First Name" + h.close("th")+h.open("th") + "Middle Name" + h.close("th")+h.open("th") + "Last Name" + h.close("th")+h.open("th") + "Phone no" + h.close("th")+h.close("tr");
               
 	            while (rs.next()) {
 	            	
-	       	      tag+= h.open("table")+h.open("style")+"table tr,td {padding:0 10px;}"+h.close("style")+h.open("tr")+h.open("td")+rs.getInt("idemployee") +h.close("td")+h.open("td")+rs.getString("First Name") +h.close("td")+h.open("td")+ rs.getString("Middle Name")+h.close("td")+h.open("td")+ rs.getString("Last Name") +h.close("td")+h.open("td")+ rs.getString("Phone no") +h.close("td")+h.close("tr")+h.close("table");
+	       	      tag+=h.open("td")+rs.getInt("idemployee") +h.close("td")+h.open("td")+rs.getString("First Name") +h.close("td")+h.open("td")+ rs.getString("Middle Name")+h.close("td")+h.open("td")+ rs.getString("Last Name") +h.close("td")+h.open("td")+ rs.getString("Phone no") +h.close("td")+h.close("tr");
 	         	  	 System.out.println( rs.getInt("idemployee") + "\t" + rs.getString("First Name") + "\t " + rs.getString("Middle Name") + "\t " + rs.getString("Last Name") + "   \t" + rs.getString("Phone no"));
-	            }
+	            }tag+=h.close("table");
 	            con.close();
 	        } catch (Exception e) {
 	            System.out.println(e);
